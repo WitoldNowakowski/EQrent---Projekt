@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+ 
+</head>
+<body>
+    <div class="overlay">
+        <div class="text-center">
+            <h1 class="display-4">EQrent</h1>
+            <div class="container text-center mt-5">
+                <h2>For the expedition, with us!</h2>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="ItemTypes" asp-action="Index">Categories</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Items" asp-action="Index">Items</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Rents" asp-action="Index">Rents</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

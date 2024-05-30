@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EQrent___Projekt.Models.Item>
+
+@{
+    ViewData["Title"] = "Equipment";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="/css/site.css" />
+</head>
+<body>
+    <h1>Equipment</h1>
+     
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>@Html.DisplayNameFor(model => model.ItemName)</th>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>Price</th>
+                <th>@Html.DisplayNameFor(model => model.ItemType)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImageUrl))
+                        {
+                            <img src="@item.ImageUrl" alt="EQ Image" width="85" height="115">
+                        }
+                        else
+                        {
+                            <span>No Image Available</span>
+                        }
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+
+                   
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn" asp-action="Index2" asp-controller="Items">Admin Panel</a>
+</body>
+</html>
